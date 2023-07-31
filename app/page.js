@@ -1,113 +1,596 @@
-import Image from 'next/image'
+"use client"
+import Navigation from "@/components/includes/Navigation"
+import Image from "next/image"
+import Dropdown from 'react-bootstrap/Dropdown'
+import {FaTasks,FaFacebookF, FaTwitter, FaYoutube} from "react-icons/fa"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      <div className="circlebg1">
+        <Image 
+          className="img-fluid tw-w-full" 
+          src="https://cdn.vnoc.com/background/vertica-holdings-framework/circlebg19.svg" 
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="" 
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="circlebg2">
+        <Image 
+          className="img-fluid tw-w-full" 
+          src="https://cdn.vnoc.com/background/vertica-holdings-framework/circlebg20.svg" 
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="" 
+        />
       </div>
-    </main>
+      <div className="circlebg3">
+        <Image 
+          className="img-fluid tw-w-full" 
+          src="https://cdn.vnoc.com/background/vertica-holdings-framework/circlebg21.svg" 
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="" 
+        />
+      </div>
+      <Navigation />
+      <section className="tw-pt-24 tw-min-h-screen">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-7">
+              <Image
+                src="https://cdn.vnoc.com/icons/chat-vertical/bannerSec1.png"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="img-fluid tw-w-full"
+                alt=""
+              />
+            </div>
+            <div className="col-lg-5">
+              <h1 className="tw-text-2xl tw-leading-6 sm:tw-text-[40px] sm:tw-leading-[54px] tw-font-bold mb-4">
+              Join a vibrant community of developers, influencers, and entrepreneurs on hairchat.com, all using the versatile CONTRIB token to power their token economies!. 
+              </h1>
+              <a href="" className="btn btn-primary tw-p-[20px!important] tw-min-w-[180px]">
+                Discover
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="tw-py-12">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <h2 className="tw-font-bold tw-text-3xl mb-3">Discover Domains</h2>
+            </div>
+            <div className="col-xl-12 mb-5">
+              <Dropdown>
+                <Dropdown.Toggle variant="dark" className="tw-py-[10px!important] tw-px-[45px!important]">
+                  Sort By
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Name</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Lastet</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Blockchain</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <div className="col-xl-12 mb-4">
+              <div className="row g-3">
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3 col-sm-6">
+                  <a href="#" className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline">
+                    <div className="tw-mr-3">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/icon-www-domain2.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="">
+                      <div className="tw-text-base tw-text-black">chatvectors.com</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-12 text-center">
+              <a href="" className="btn btn-primary px-5">
+                <small>View more</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="tw-py-12">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <h2 className="tw-font-bold tw-text-3xl mb-3">Latest Tasks</h2>
+              contrib tool widget here
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="tw-py-12">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <h2 className="tw-font-bold tw-text-3xl mb-3">Browse Categories</h2>
+            </div>
+            <div className="col-lg-12">
+              <div className="row g-3">
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xl-3">
+                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
+                    <div className="tw-mr-4">
+                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
+                    </div>
+                    <div className="tw-text-[#515151]">
+                      Agriculture
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="tw-py-12">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <h2 className="tw-font-bold tw-text-3xl mb-4">What We Do</h2>
+            </div>
+            <div className="col-xl-12">
+              <div className="row">
+                <div className="col-xl-4">
+                  <div className="tw-flex tw-items-center tw-full mb-4">
+                    <div className="tw-mr-4">
+                      <Image 
+                        src="https://cdn.vnoc.com/icons/vertical-holdings-framework/mobile-cogs.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="tw-font-medium tw-text-lg">
+                      We Build Brands
+                    </div>
+                  </div>
+                  <p className="tw-text-gray-400 tw-text-sm">
+                  We have the best technology contributors and inhouse staff that builds great brands.
+                  </p>
+                </div>
+                <div className="col-xl-4">
+                  <div className="tw-flex tw-items-center tw-full mb-4">
+                    <div className="tw-mr-4">
+                      <Image 
+                        src="https://cdn.vnoc.com/icons/vertical-holdings-framework/mobile-money.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="tw-font-medium tw-text-lg">
+                    We Build Products
+                    </div>
+                  </div>
+                  <p className="tw-text-gray-400 tw-text-sm">
+                  Using our Contrib/VNOC model we are able to build web products vertically but still we need your help.
+                  </p>
+                </div>
+                <div className="col-xl-4">
+                  <div className="tw-flex tw-items-center tw-full mb-4">
+                    <div className="tw-mr-4">
+                      <Image 
+                        src="https://cdn.vnoc.com/icons/vertical-holdings-framework/mobile-notification.png"
+                        width={50}
+                        height={50}
+                        alt=""
+                      />
+                    </div>
+                    <div className="tw-font-medium tw-text-lg">
+                    We Build Verticals
+                    </div>
+                  </div>
+                  <p className="tw-text-gray-400 tw-text-sm">
+                  Using our massive Globalventures portfolio, we build products around our verticals and create synergy within and outside our portfolio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="tw-py-12 tw-bg-gray-100/50">
+        <div className="container">
+          <div className="row tw-justify-center">
+            <div className="col-xl-9">
+              <div className="row tw-justify-center tw-items-center">
+                <div className="col-xl-4">
+                  <div className="tw-w-1/2 tw-m-auto xl:tw-w-full">
+                    <Image 
+                      src="https://vnoc.com/assets/lander/assets/images/envelope.png"
+                      height={0}
+                      width={0}
+                      alt=""
+                      sizes="100vw"
+                      className="tw-w-full img-fluid"
+                    />
+                  </div>
+                </div>
+                <div className="col-xl-8 tw-flex tw-flex-col">
+                  <h2 className="tw-font-bold tw-text-3xl tw-text-[#020E1E] mb-3">
+                  Learn more about us
+                  </h2>
+                  <p className="tw-text-gray-400">
+                  Join the Network of Professionals and Digital Asset Owners.
+                  </p>
+                  <div className="row">
+                    <div className="col-lg-9 tw-mb-3 sm:tw-mb-auto">
+                      <input type="text" className="form-control form-control-lg" placeholder="Email Address" />
+                    </div>
+                    <div className="col-lg-3">
+                      <div className="d-grid">
+                        <a href="" className="btn btn-primary btn-lg px-4">
+                          Submit
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer className="tw-bg-[#020E1E] tw-py-12 tw-text-white">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-4">
+              <h4 className="tw-font-semibold mb-3">Hairchat.com</h4>
+              <p className="small">
+              Join a vibrant community of developers, influencers, and entrepreneurs on hairchat.com, all using the versatile CONTRIB token to power their token economies!
+              </p>
+            </div>
+            <div className="col-xl-8 tw-flex tw-justify-between xl:tw-pl-[10rem!important]">
+              <div className="col">
+                <h4 className="tw-font-bold mb-3">
+                  Get Started
+                </h4>
+                <ul className="list-unstyled">
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Partner
+                    </a>
+                  </li>
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Apply Now
+                    </a>
+                  </li>
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Referral
+                    </a>
+                  </li>
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Developers
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="col">
+                <h4 className="tw-font-bold mb-3">
+                Company
+                </h4>
+                <ul className="list-unstyled">
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    About Us
+                    </a>
+                  </li>
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Contact Us
+                    </a>
+                  </li>
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Terms
+                    </a>
+                  </li>
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    Privacy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="col">
+                <h4 className="tw-font-bold mb-3">
+                Partners
+                </h4>
+                <ul className="list-unstyled">
+                  <li className="mb-3">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                      <Image 
+                        src="https://s3.amazonaws.com/assets.zipsite.net/images/jayson/logo/logo-new-contrib-06-wyt.png"
+                        width={129}
+                        height={40}
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </a>
+                  </li>
+                </ul>
+                <h4 className="tw-font-bold mb-3">
+                Socials
+                </h4>
+                <ul className="list-inline">
+                  <li className="mb-3 list-inline-item">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                      <FaFacebookF/>
+                    </a>
+                  </li>
+                  <li className="mb-3 list-inline-item">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    <FaTwitter />
+                    </a>
+                  </li>
+                  <li className="mb-3 list-inline-item">
+                    <a href="#" className="tw-no-underline tw-text-white tw-inline-block">
+                    <FaYoutube />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   )
 }
