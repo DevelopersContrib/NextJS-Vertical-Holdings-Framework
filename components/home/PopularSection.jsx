@@ -5,9 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+
+// Import Text Limit Truncate
+import TextLimit from './TextLimit';
 
 const PopularSection = () => {
   return (
@@ -21,6 +25,7 @@ const PopularSection = () => {
             <Swiper
               slidesPerView={1}
               spaceBetween={30}
+              navigation={true}
               loop={true}
               pagination={{
                 clickable: true,
@@ -35,12 +40,12 @@ const PopularSection = () => {
                   spaceBetween: 40,
                 },
               }}
-              modules={[Pagination, Autoplay]}
+              modules={[Pagination, Autoplay, Navigation]}
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative'>
-                  <div className="tw-w-full">
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
                     <Image
                       src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
                       width={0}
@@ -50,9 +55,38 @@ const PopularSection = () => {
                       className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
                     />
                   </div>
-                  <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-table tw-absolute tw-left-0 tw-right-0">
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
                     <Image
-                      src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
                       width={0}
                       height={0}
                       sizes="100vw"
@@ -60,101 +94,268 @@ const PopularSection = () => {
                       className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
                     />
                   </div>
-                  <div className="tw-w-full text-center">
-                    <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
-                      <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
-                    </h2>
-                    <p>
-                      Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!
-                    </p>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="https://consultants.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/consultants.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
+                    <Image
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                    />
+                  </div>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="https://globalventures.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/globalventures.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
+                    <Image
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                    />
+                  </div>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="https://photostream.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/photostream.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
+                    <Image
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                    />
+                  </div>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="https://referrals.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/referrals.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
+                    <Image
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                    />
+                  </div>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="https://venturecamp.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/venturecamp.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
+                    <Image
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                    />
+                  </div>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <a href="https://virtualinterns.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/virtualinterns.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
+                <div className='tw-inline-flex tw-w-full tw-h-full tw-flex-col tw-relative tw-pb-4'>
+                  <div className="tw-w-full tw-relative">
+                    <Image
+                      src="https://cdn.vnoc.com/icons/chat-vertical/chat-popular-image2.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt=""
+                      className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                    />
+                  </div>
+                  <div className="tw-bg-white tw-rounded-br-xl tw-rounded-bl-xl tw-p-2 tw-shadow-[0px_4px_10px_6px_rgb(0_0_0_/_5%)]">
+                    <div className="tw-w-[200px] tw-mt-[-45px] tw-mx-auto tw-relative">
+                      <Image
+                        src="https://cdn.vnoc.com/logos/logo-ChatCafe-3.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
+                        className='img-fluid tw-w-full tw-rounded-tr-xl tw-rounded-tl-xl'
+                      />
+                    </div>
+                    <div className="tw-w-full text-center">
+                      <h2 className='tw-font-semibold tw-text-base tw-mb-4'>
+                        <a href="http://chatcafe.com" target='_blank' className='tw-no-underline'>chatcafe.com</a>
+                      </h2>
+                      <p>
+                        <TextLimit text="Join a vibrant community of developers, influencers, and entrepreneurs on chatcafe.com, all using the versatile CONTRIB token to power their token economies!" limit={80} />
+                      </p>
+                      <div className="text-center mb-4">
+                        <a href="#" className="btn btn-primary">
+                          Contribute
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <a href="https://wellnesschallenge.com/" className='tw-inline-flex tw-w-full tw-h-full' target='_blank'>
-                  <Image
-                    src="https://cdn.vnoc.com/background/wellnesschallenge.png"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt=""
-                    className='img-fluid tw-w-[80%] lg:tw-w-full lg:tw-h-full mx-auto'
-                  />
-                </a>
-              </SwiperSlide>
-
+              
             </Swiper>
           </div>
         </div>

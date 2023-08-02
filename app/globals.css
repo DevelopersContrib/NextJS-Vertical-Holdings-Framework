@@ -55,3 +55,18 @@ nav.navbar .navbar-nav .nav-link {
   top: -20px;
   z-index: -1;
 }
+
+/* Custom CSS for Swiper */
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next{
+  z-index: 10;
+  background-color: #0E294D;
+  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+}
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after{
+  font-size: 14px;
+  color: #fff;
+}
