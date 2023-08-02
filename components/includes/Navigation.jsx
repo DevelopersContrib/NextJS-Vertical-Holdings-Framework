@@ -1,7 +1,6 @@
 "use client"
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { SlMagnifier } from "react-icons/sl";
 
 const Navigation = () => {
@@ -9,8 +8,8 @@ const Navigation = () => {
     <Navbar expand="lg" className="tw-bg-[transparent!important] tw-mt-5">
       <div className='container'>
         <Navbar.Brand href="#home">Hairchat.com</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle />
+        <Navbar.Collapse >
           <div 
             className="d-flex tw-border tw-border-gray-200 tw-border-solid tw-bg-white tw-rounded-lg tw-items-center tw-max-w-[300px!important]"
           >

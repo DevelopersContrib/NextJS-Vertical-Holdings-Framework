@@ -1,5 +1,6 @@
 "use client"
 import Navigation from "@/components/includes/Navigation"
+import PopularSection from "@/components/home/PopularSection"
 import Image from "next/image"
 import Dropdown from 'react-bootstrap/Dropdown'
 import {FaTasks,FaFacebookF, FaTwitter, FaYoutube} from "react-icons/fa"
@@ -62,6 +63,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PopularSection />
       <section className="tw-py-12">
         <div className="container">
           <div className="row">
@@ -70,7 +72,7 @@ export default function Home() {
             </div>
             <div className="col-xl-12 mb-5">
               <Dropdown>
-                <Dropdown.Toggle variant="dark" className="tw-py-[10px!important] tw-px-[45px!important]">
+                <Dropdown.Toggle id="dropdown-sortby" variant="dark" className="tw-py-[10px!important] tw-px-[45px!important]">
                   Sort By
                 </Dropdown.Toggle>
 
