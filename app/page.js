@@ -4,20 +4,24 @@ import HeaderWidget from "@/components/includes/HeaderWidget"
 import Footer from "@/components/includes/Footer"
 import PopularSection from "@/components/home/PopularSection"
 import DiscoverSection from "@/components/home/DiscoverSection"
+import CategorySection from "@/components/home/CategorySection"
 import ScriptLoader from '@/components/includes/ScriptLoader'
 import Image from "next/image"
-import {FaTasks} from "react-icons/fa"
-import { getDomain,getData } from '@/lib/data';
+import { getDomain,getData, getchatdomains, getCategories } from '@/lib/data';
 
 
 export default async function  Home() {
-
+  
   const c = await getData();
   const domain = getDomain();
+  const popular_domains = await getchatdomains('8','','');
+  const top_seller = await getchatdomains('12','','');
+  const categories = await getCategories();
   const twitter_url = c.data.twitter;
   const fb_url = c.data.fb;
   const linkedin_url = c.data.linkedin;
   const html = '<script type="text/javascript" src="https://tools.contrib.com/eservice/chat?chat=1&d='+domain+'" style="height:960px"></script>';
+  
   
   return (
     <>
@@ -77,8 +81,9 @@ export default async function  Home() {
           </div>
         </div>
       </section>
-      <PopularSection />
-      <DiscoverSection />
+      <PopularSection popular_domains={popular_domains}/>
+      <DiscoverSection top_seller={top_seller}/>
+     
       <section className="tw-py-12">
         <div className="container">
           <div className="row">
@@ -89,99 +94,8 @@ export default async function  Home() {
           </div>
         </div>
       </section>
-      <section className="tw-py-12">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <h2 className="tw-font-bold tw-text-3xl mb-3">Browse Categories</h2>
-            </div>
-            <div className="col-lg-12">
-              <div className="row g-3">
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-                <div className="col-xl-3">
-                  <a target="_blank" href="" className="tw-no-underline tw-flex tw-w-full tw-items-center tw-text-2xl tw-font-medium">
-                    <div className="tw-mr-4">
-                      <FaTasks className="tw-w-6 tw-h-6 tw-text-blue-400" />
-                    </div>
-                    <div className="tw-text-[#515151]">
-                      Agriculture
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CategorySection categories={categories}/>
+     
       <section className="tw-py-12">
         <div className="container">
           <div className="row">

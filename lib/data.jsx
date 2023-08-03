@@ -35,7 +35,7 @@ export async function getCategories() {
     return res.json();
 }
 
-export async function Getchatdomains(limit, keyword, sort) {
+export async function getchatdomains(limit, keyword, sort) {
     const domain = getDomain();
     const url = process.env.GET_CHAT_DOMAINS+`&domain=${domain}&limit=${limit}&keyword=${keyword}&sort=${sort}`
     const res = await fetch(url);
