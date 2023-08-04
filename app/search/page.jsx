@@ -30,8 +30,8 @@ const page = async () => {
         <Image
           className="img-fluid tw-w-full"
           src="https://cdn.vnoc.com/background/vertica-holdings-framework/circlebg20.svg"
-          width={525}
-          height={548}
+          width={714}
+          height={719}
           sizes="100vw"
           alt=""
         />
