@@ -42,8 +42,7 @@ nav.navbar .navbar-nav .nav-link {
 }
 .circlebg2 {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 28%;
   top: 10px;
   z-index: -1;
   margin: auto;
