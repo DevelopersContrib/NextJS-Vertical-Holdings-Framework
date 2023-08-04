@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Logo from '@/components/includes/Logo';
 import Navbar from 'react-bootstrap/Navbar';
 import { SlMagnifier } from "react-icons/sl";
-import Image from "next/image"
+
 
 const Navigation = ({domain,logo}) => {
   return (
