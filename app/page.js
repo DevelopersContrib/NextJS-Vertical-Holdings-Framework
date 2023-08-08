@@ -163,7 +163,7 @@ export default async function  Home() {
           </div>
         </div>
       </section>
-      <Learn />
+      <Learn domain={domain}/>
       
       <Footer domain={domain} twitter_url={twitter_url} fb_url={fb_url} linkedin_url={linkedin_url}/>
     </>

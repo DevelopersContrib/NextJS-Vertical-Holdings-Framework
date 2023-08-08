@@ -15,11 +15,14 @@ const DiscoverSection =  ({top_seller}) => {
 
     const initialDiscover = {
         sort: '',
-        limit: '12'
+        limit: '12',
+        keyword: ''
     }
 
     const [data, setData] = useState(initialValues);
     const [selectedValue, setSelectedValue] = useState(initialDiscover);
+
+   
     
    
     useEffect(() => {

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import { getData } from '@/lib/data'
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata() {
   const c = await getData();

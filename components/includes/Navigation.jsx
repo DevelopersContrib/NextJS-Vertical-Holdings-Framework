@@ -1,11 +1,32 @@
 "use client"
 import Nav from 'react-bootstrap/Nav';
 import Logo from '@/components/includes/Logo';
+import { useRouter } from 'next/navigation'
+import { useState } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import { SlMagnifier } from "react-icons/sl";
 
 
 const Navigation = ({domain,logo}) => {
+  const router = useRouter()
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      redirectToSearch();
+    }
+  };
+
+  const redirectToSearch = () => {
+    const url = `/search?key=${encodeURIComponent(inputValue)}`;
+    router.push(url);
+  };
+
+
   return (
     <>
       <Navbar expand="lg" className="tw-bg-[transparent!important] tw-mt-5">
@@ -20,7 +41,10 @@ const Navigation = ({domain,logo}) => {
               <span className='tw-pl-2'>
                 <SlMagnifier className='tw-text-gray-300' />
               </span>
-              <input type="text" className="form-control tw-bg-[transparent] tw-border-[transparent!important] search-input" placeholder='Search domain' />
+              <input type="text" className="form-control tw-bg-[transparent] tw-border-[transparent!important] search-input" placeholder='Search domain' 
+              onChange={handleInputChange} 
+              onKeyDown={handleKeyDown}
+              />
             </div>
             <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
