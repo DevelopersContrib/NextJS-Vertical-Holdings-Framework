@@ -38,6 +38,26 @@ const Footer = ({domain, twitter_url, fb_url, linkedin_url}) => {
                     Developers
                     </a>
                 </li>
+                <li className="mb-3">
+                    <a href={`https://domaindirectory.com/servicepage/?domain=${domain}`} className="tw-no-underline tw-text-white tw-inline-block">
+                    Build
+                    </a>
+                </li>
+                <li className="mb-3">
+                    <a href={`https://domaindirectory.com/servicepage/?domain=${domain}`} className="tw-no-underline tw-text-white tw-inline-block">
+                    Invest
+                    </a>
+                </li>
+                <li className="mb-3">
+                    <a href={`https://domaindirectory.com/servicepage/?domain=${domain}`} className="tw-no-underline tw-text-white tw-inline-block">
+                    Manage
+                    </a>
+                </li>
+                <li className="mb-3">
+                    <a href={`https://domaindirectory.com/servicepage/?domain=${domain}`} className="tw-no-underline tw-text-white tw-inline-block">
+                    Monetize
+                    </a>
+                </li>
                 </ul>
             </div>
             <div className="col">
