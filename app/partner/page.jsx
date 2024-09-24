@@ -4,8 +4,8 @@ const page = () => {
   const domain = getDomain();
   return (
     <>
-      <Script src={"https://tools.contrib.com/pages/partner?d="+domain+"&container=partner-script"} />
-      <div className="partner-script"></div>
+      <Script src={"https://tools.contrib.com/pages/developer?d="+domain+"&container=developer-script"} />
+      <div className="developer-script"></div>
     </>
   )
 }
