@@ -48,6 +48,7 @@ const Navigation = ({domain,logo}) => {
             </div>
             <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/blog">Blog</Nav.Link>
               <Nav.Link href="/about">About Us</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
             </Nav>
