@@ -86,11 +86,10 @@ const Learn = ({domain}) => {
                     <div className="col-xl-4">
                     <div className="tw-w-1/2 tw-m-auto xl:tw-w-full">
                         <Image 
-                        src="https://vnoc.com/assets/lander/assets/images/envelope.png"
-                        height={0}
-                        width={0}
+                        src="https://cdn.vnoc.com/icons/envelope1.png"
+                        height={500}
+                        width={500}
                         alt=""
-                        sizes="100vw"
                         className="tw-w-full img-fluid"
                         />
                     </div>

@@ -29,8 +29,7 @@ const page = () => {
   return (
     <>
       <Navigation domain={domain}/>
-      <BlogSection domain={domain}/>
-      
+      <div className='my-5 py-5'><BlogSection domain={domain}/></div> 
       <Footer domain={domain}/>
     </>
   );
