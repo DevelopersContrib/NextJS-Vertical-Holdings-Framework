@@ -6,6 +6,8 @@ import PopularSection from "@/components/home/PopularSection"
 import DiscoverSection from "@/components/home/DiscoverSection"
 import CategorySection from "@/components/home/CategorySection"
 import ScriptLoader from '@/components/includes/ScriptLoader'
+import BlogSection from "@/components/home/BlogSection";
+
 import Image from "next/image"
 import { getDomain,getData, getchatdomains, getCategories } from '@/lib/data';
 
@@ -95,7 +97,16 @@ export default async function  Home() {
         </div>
       </section>
       <CategorySection categories={categories}/>
-     
+      <section className="tw-py-12">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <h2 className="tw-font-bold tw-text-3xl mb-4">Latest Blogs</h2>
+          </div>
+        </div>
+      </div>
+      <BlogSection domain={domain}/>
+      </section>
       <section className="tw-py-12">
         <div className="container">
           <div className="row">
