@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import LoadingState from '@/components/includes/LoadingState';
 import BlogDetail from './BlogDetail';
+import Link from "next/link";
 
 const BlogSection = () => {
   const [blogPosts, setBlogs] = useState([]);
@@ -37,10 +38,10 @@ const BlogSection = () => {
       ) : (
         <div className="row">
           {blogPosts.map((post, index) => (
-            <div
+            <a
               className="col-md-4 mb-4"
               key={index}
-              onClick={() => setSelectedBlog(post)}
+              href={`/blogpost/${post.slug+'---'+post.id}`}
               style={{ cursor: 'pointer' }}
             >
               <div className="card h-100">
@@ -55,7 +56,7 @@ const BlogSection = () => {
                   <h5 className="card-title">{post.title}</h5>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       )}
