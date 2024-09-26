@@ -41,8 +41,8 @@ const BlogSection = () => {
             <a
               className="col-md-4 mb-4"
               key={index}
-              href={`/blogpost/${post.slug+'---'+post.id}`}
-              style={{ cursor: 'pointer' }}
+              href={`/blog/${post.slug+'---'+post.id}`}
+              style={{ cursor: 'pointer', textDecoration: 'none' }}
             >
               <div className="card h-100">
                 <Image
