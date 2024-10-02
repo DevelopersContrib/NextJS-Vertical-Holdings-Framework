@@ -98,13 +98,7 @@ export default async function  Home() {
       </section>
       <CategorySection categories={categories}/>
       <section className="tw-py-12">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <h2 className="tw-font-bold tw-text-3xl mb-4">Latest Blogs</h2>
-          </div>
-        </div>
-      </div>
+      
       <BlogSection domain={domain}/>
       </section>
       <section className="tw-py-12">
