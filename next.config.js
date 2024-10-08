@@ -56,6 +56,7 @@ const nextConfig = {
       'vnoc.com',
       's3.amazonaws.com',
       'images.pexels.com',
+      'vbot-images.s3.us-east-1.amazonaws.com'
     ],
   },
 };
