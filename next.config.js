@@ -4,38 +4,38 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/',
+        source: "/",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
       {
-        source: '/partner',
+        source: "/partner",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
       {
-        source: '/about',
+        source: "/about",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
       {
-        source: '/contact',
+        source: "/contact",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
@@ -43,21 +43,26 @@ const nextConfig = {
   },
   images: {
     domains: [
-      'vnoc.com',
-      'cdn.vnoc.com',
-      'd2qcctj8epnr7y.cloudfront.net',
-      'vnoclogos.s3.amazonaws.com',
-      'contentbots.com',
-      'vnoclogos.s3-us-west-1.amazonaws.com',
-      'tools.contrib.com',
-      'contrib.com',
-      'www.contrib.com',
-      'vnoclogos.s3-us-west-1.amazonaws.com',
-      'vnoc.com',
-      's3.amazonaws.com',
-      'images.pexels.com',
-      'vbot-images.s3.us-east-1.amazonaws.com'
+      "vnoc.com",
+      "cdn.vnoc.com",
+      "d2qcctj8epnr7y.cloudfront.net",
+      "vnoclogos.s3.amazonaws.com",
+      "contentbots.com",
+      "vnoclogos.s3-us-west-1.amazonaws.com",
+      "tools.contrib.com",
+      "contrib.com",
+      "www.contrib.com",
+      "vnoclogos.s3-us-west-1.amazonaws.com",
+      "vnoc.com",
+      "s3.amazonaws.com",
+      "images.pexels.com",
+      "vbot-images.s3.us-east-1.amazonaws.com",
+      "manage.vnoc.com",
     ],
+  },
+  env: {
+    API_URL: process.env.API_URL,
+    API_KEY: process.env.API_KEY,
   },
 };
 
