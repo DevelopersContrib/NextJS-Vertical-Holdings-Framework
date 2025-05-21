@@ -1,16 +1,16 @@
-import Navigation from "@/components/includes/Navigation";
-import Learn from "@/components/includes/Learn";
-import HeaderWidget from "@/components/includes/HeaderWidget";
-import Footer from "@/components/includes/Footer";
-import PopularSection from "@/components/home/PopularSection";
-import DiscoverSection from "@/components/home/DiscoverSection";
 import CategorySection from "@/components/home/CategorySection";
+import DiscoverSection from "@/components/home/DiscoverSection";
+import PopularSection from "@/components/home/PopularSection";
+import Footer from "@/components/includes/Footer";
+import HeaderWidget from "@/components/includes/HeaderWidget";
+import Learn from "@/components/includes/Learn";
+import Navigation from "@/components/includes/Navigation";
 import ScriptLoader from "@/components/includes/ScriptLoader";
-import BlogSection from "@/components/home/BlogSection";
+import Notification from "@/components/notification/Notification";
 import BlogList from "@/modules/blog/BlogList";
 
+import { getCategories, getData, getDomain, getchatdomains } from "@/lib/data";
 import Image from "next/image";
-import { getDomain, getData, getchatdomains, getCategories } from "@/lib/data";
 
 export default async function Home() {
   const c = await getData();
@@ -176,7 +176,7 @@ export default async function Home() {
         </div>
       </section>
       <Learn domain={domain} />
-
+      <Notification />
       <Footer
         domain={domain}
         twitter_url={twitter_url}

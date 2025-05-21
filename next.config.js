@@ -58,6 +58,7 @@ const nextConfig = {
       "images.pexels.com",
       "vbot-images.s3.us-east-1.amazonaws.com",
       "manage.vnoc.com",
+      "randomuser.me",
     ],
   },
   env: {
