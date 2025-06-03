@@ -60,6 +60,7 @@ const nextConfig = {
       "manage.vnoc.com",
       "randomuser.me",
       "i.pravatar.cc",
+      "vnocassets.s3.us-east-1.amazonaws.com"
     ],
   },
   env: {
