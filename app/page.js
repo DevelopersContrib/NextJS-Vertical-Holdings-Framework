@@ -7,7 +7,7 @@ import Learn from "@/components/includes/Learn";
 import Navigation from "@/components/includes/Navigation";
 import ScriptLoader from "@/components/includes/ScriptLoader";
 import Notification from "@/components/notification/Notification";
-import BlogList from "@/modules/blog/BlogList";
+//import BlogList from "@/modules/blog/BlogList";
 
 import { getCategories, getData, getDomain, getchatdomains } from "@/lib/data";
 import Image from "next/image";
@@ -110,7 +110,7 @@ export default async function Home() {
       </section>
 
       <CategorySection categories={categories} />
-      <BlogList />
+      {/* <BlogList /> */}
       <section className="tw-py-12">
         <div className="container">
           <div className="row">
