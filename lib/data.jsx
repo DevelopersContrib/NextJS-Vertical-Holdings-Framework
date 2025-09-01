@@ -12,7 +12,13 @@ export function getDomain() {
 export async function getData() {
   const domain = getDomain();
   const url = process.env.CONTRIB_API1 + `&domain=${domain}`;
-  const res = await fetch(url, { next: { revalidate: 3600 } });
+  const res = await fetch(url, { 
+    next: { revalidate: 3600 },
+    mode: "cors",
+    headers: {
+      "User-Agent": "Mozilla/5.0",
+    },
+  });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
@@ -24,7 +30,13 @@ export async function getData() {
 export async function getCategories() {
   const domain = getDomain();
   const url = process.env.GET_CATEGORIES + `&domain=${domain}`;
-  const res = await fetch(url, { next: { revalidate: 3600 } });
+  const res = await fetch(url, { 
+    next: { revalidate: 3600 },
+    mode: "cors",
+    headers: {
+      "User-Agent": "Mozilla/5.0",
+    },
+  });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
@@ -38,7 +50,13 @@ export async function getchatdomains(limit, keyword, sort) {
   const url =
     process.env.GET_CHAT_DOMAINS +
     `&domain=${domain}&limit=${limit}&keyword=${keyword}&sort=${sort}`;
-  const res = await fetch(url, { next: { revalidate: 3600 } });
+  const res = await fetch(url, { 
+    next: { revalidate: 3600 },
+    mode: "cors",
+    headers: {
+      "User-Agent": "Mozilla/5.0",
+    },
+  });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
@@ -60,7 +78,13 @@ export async function getScript(url) {
 export async function getBlogs() {
   const domain = getDomain();
   const url = process.env.GET_BLOGS + `&domain=${domain}`;
-  const res = await fetch(url, { next: { revalidate: 3600 } });
+  const res = await fetch(url, { 
+    next: { revalidate: 3600 },
+    mode: "cors",
+    headers: {
+      "User-Agent": "Mozilla/5.0",
+    },
+  });
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
