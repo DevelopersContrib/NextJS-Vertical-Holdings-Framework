@@ -8,7 +8,7 @@ const page = () => {
   return (
     <>
       <Navigation domain={domain} />
-      <BlogList />
+      <BlogList theme="white" />
       <Footer domain={domain} />
     </>
   );

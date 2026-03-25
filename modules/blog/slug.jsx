@@ -21,7 +21,7 @@ const BlogSlugPage = ({ id }) => {
     </section>
   ) : (
     <section className="tw-min-h-screen tw-py-16">
-      <div className="container animate_top mb-10 rounded-md border border-stroke bg-white p-3.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
+      <div className="container tw-mb-10 tw-rounded-md tw-border tw-border-slate-700 tw-bg-slate-900 tw-p-3.5 tw-shadow-lg">
         <div
           dangerouslySetInnerHTML={{ __html: content }}
           className="custom-blog-content"

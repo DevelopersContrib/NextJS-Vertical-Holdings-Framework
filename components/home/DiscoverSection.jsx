@@ -71,15 +71,15 @@ const DiscoverSection = ({ top_seller }) => {
 
   const showDiscover = () => {
     return (
-      <div className="row g-3">
+      <div className="row g-3 tw-items-stretch">
         {data.top_sellers.data.domains.map((top_sellers) => (
           <div
-            className="col-xl-3 col-sm-6"
+            className="col-xl-3 col-sm-6 tw-flex"
             key={top_sellers.domain_name}
           >
             <a
               href={top_sellers.domain_name}
-              className="tw-flex tw-w-full tw-shadow-md tw-p-2 tw-items-center tw-rounded-lg tw-no-underline"
+              className="tw-flex tw-h-full tw-w-full tw-min-h-[4.75rem] tw-items-center tw-rounded-xl tw-border tw-border-slate-700/80 tw-bg-slate-950/50 tw-p-3 tw-shadow-md tw-shadow-black/20 tw-no-underline tw-transition-colors hover:tw-border-slate-600 hover:tw-bg-slate-900/70"
             >
               <div className="tw-mr-3">
                 <Image
@@ -94,7 +94,7 @@ const DiscoverSection = ({ top_seller }) => {
                 />
               </div>
               <div className="">
-                <div className="tw-text-base tw-text-black">{top_sellers.domain_name}</div>
+                <div className="tw-text-base tw-text-slate-100">{top_sellers.domain_name}</div>
               </div>
             </a>
           </div>
@@ -104,19 +104,26 @@ const DiscoverSection = ({ top_seller }) => {
   };
 
   return (
-    <section className="tw-py-12">
+    <section
+      id="discover-domains"
+      className="tw-scroll-mt-24 tw-border-t tw-border-slate-800/80 tw-bg-slate-900/40 tw-py-20"
+    >
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
-            <h2 className="tw-font-bold tw-text-3xl mb-3">Discover Domains</h2>
+            <p className="tw-mb-2 tw-text-sm tw-font-semibold tw-uppercase tw-tracking-wide tw-text-sky-400">
+              Explore
+            </p>
+            <h2 className="tw-mb-3 tw-text-3xl tw-font-bold tw-tracking-tight tw-text-slate-100 md:tw-text-4xl">
+              Discover domains
+            </h2>
+            <p className="tw-mb-8 tw-max-w-2xl tw-text-slate-400">
+              Sort the directory and open properties that match your interests.
+            </p>
           </div>
           <div className="col-xl-12 mb-5">
             <Dropdown onSelect={handleSelect}>
-              <Dropdown.Toggle
-                id="dropdown-sortby"
-                variant="dark"
-                className="tw-py-[10px!important] tw-px-[45px!important]"
-              >
+              <Dropdown.Toggle id="dropdown-sortby" variant="dark">
                 Sort By
               </Dropdown.Toggle>
 
@@ -132,9 +139,10 @@ const DiscoverSection = ({ top_seller }) => {
             <button
               onClick={handleClick}
               name={data.showMoreLess}
-              className="btn btn-primary px-5"
+              type="button"
+              className="btn btn-primary"
             >
-              <small>{data.buttonLabel}</small>
+              {data.buttonLabel}
             </button>
           </div>
         </div>

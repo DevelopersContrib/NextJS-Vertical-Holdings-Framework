@@ -53,7 +53,7 @@ export async function generateMetadata() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" data-bs-theme="dark">
       <body>
         <First100FoundersModalWrapper />
         {children}

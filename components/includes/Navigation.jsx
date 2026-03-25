@@ -1,63 +1,57 @@
-"use client"
-import Nav from 'react-bootstrap/Nav';
-import Logo from '@/components/includes/Logo';
-import { useRouter } from 'next/navigation'
-import { useState } from "react";
-import Navbar from 'react-bootstrap/Navbar';
-import { SlMagnifier } from "react-icons/sl";
+"use client";
 
+import Link from "next/link";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Logo from "@/components/includes/Logo";
 
-const Navigation = ({domain,logo}) => {
-  const router = useRouter()
-  const [inputValue, setInputValue] = useState('');
+const navLinkClass =
+  "tw-rounded-lg tw-px-3 tw-py-2 tw-text-[0.9375rem] tw-font-medium tw-text-slate-300 tw-no-underline tw-transition-colors hover:tw-bg-slate-800/60 hover:tw-text-slate-100";
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      redirectToSearch();
-    }
-  };
-
-  const redirectToSearch = () => {
-    const url = `/search?key=${encodeURIComponent(inputValue)}`;
-    router.push(url);
-  };
-
-
+const Navigation = ({ domain, logo }) => {
   return (
-    <>
-      <Navbar expand="lg" className="tw-bg-[transparent!important] tw-mt-5">
-        <div className='container'>
+    <Navbar
+      expand="lg"
+      collapseOnSelect
+      className="tw-border-0 tw-bg-transparent tw-py-3 tw-pt-5 md:tw-pt-6"
+    >
+      <Container className="tw-px-3 sm:tw-px-4">
+        <Navbar.Brand
+          as={Link}
+          href="/"
+          className="tw-mr-4 tw-flex tw-items-center tw-py-0"
+        >
           <Logo domain={domain} logo={logo} />
-        
-          <Navbar.Toggle />
-          <Navbar.Collapse >
-            <div 
-              className="d-flex tw-border tw-border-gray-200 tw-border-solid tw-bg-white tw-rounded-lg tw-items-center tw-max-w-[300px!important]"
-            >
-              <span className='tw-pl-2'>
-                <SlMagnifier className='tw-text-gray-300' />
-              </span>
-              <input type="text" className="form-control tw-bg-[transparent] tw-border-[transparent!important] search-input" placeholder='Search domain' 
-              onChange={handleInputChange} 
-              onKeyDown={handleKeyDown}
-              />
-            </div>
-            <Nav className="ms-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/blog">Blog</Nav.Link>
-              <Nav.Link href="/about">About Us</Nav.Link>
-              <Nav.Link href="/contact">Contact Us</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </div>
-      </Navbar>
-    </>
-    
-  )
-}
+        </Navbar.Brand>
 
-export default Navigation
+        <Navbar.Toggle
+          aria-controls="main-navbar-nav"
+          className="tw-border tw-border-slate-600 tw-text-slate-200 focus:tw-shadow-none"
+        />
+
+        <Navbar.Collapse id="main-navbar-nav" className="tw-items-stretch lg:tw-items-center">
+          <Nav className="tw-mt-3 tw-flex-col tw-gap-0.5 tw-border-t tw-border-slate-800/80 tw-pt-3 lg:tw-ms-auto lg:tw-mt-0 lg:tw-flex-row lg:tw-flex-wrap lg:tw-items-center lg:tw-gap-0.5 lg:tw-border-0 lg:tw-pt-0 lg:tw-pl-2 xl:tw-gap-1">
+            <Nav.Link as={Link} href="/" className={navLinkClass}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} href="/search" className={navLinkClass}>
+              Search
+            </Nav.Link>
+            <Nav.Link as={Link} href="/blog" className={navLinkClass}>
+              Blog
+            </Nav.Link>
+            <Nav.Link as={Link} href="/about" className={navLinkClass}>
+              About Us
+            </Nav.Link>
+            <Nav.Link as={Link} href="/contact" className={navLinkClass}>
+              Contact Us
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default Navigation;

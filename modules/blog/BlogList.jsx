@@ -1,8 +1,7 @@
 "use client";
 import { useFetchBlog } from "@/lib/hooks/useBlogFetcher";
 import { useBlogStore } from "@/lib/store/useBlogStore";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Calendar } from "lucide-react";
 import LoadingState from "@/components/includes/LoadingState";
 import Image from "next/image";
 
@@ -84,11 +83,15 @@ const BlogList = ({ theme = "black" }) => {
                               >
                                 Read More
                               </a>
-                              <div className="tw-bg-blue-100 tw-px-2 tw-py-1 tw-rounded-md tw-text-xs tw-gap-2 tw-inline-flex tw-items-center tw-text-blue-500/80">
-                                <div>
-                                  <FontAwesomeIcon icon={faCalendar} />
-                                </div>
-                                <div>{post.createdAt}</div>
+                              <div
+                                className={`tw-inline-flex tw-items-center tw-gap-1.5 tw-rounded-md tw-px-2 tw-py-1 tw-text-xs ${
+                                  theme === "white"
+                                    ? "tw-bg-slate-800/80 tw-text-sky-300/90"
+                                    : "tw-bg-sky-500/10 tw-text-sky-600"
+                                }`}
+                              >
+                                <Calendar className="tw-h-3.5 tw-w-3.5 tw-shrink-0" strokeWidth={2} aria-hidden />
+                                <span>{post.createdAt}</span>
                               </div>
                             </div>
                           </div>
@@ -113,7 +116,7 @@ const BlogList = ({ theme = "black" }) => {
                     </div>
                   ))
                 ) : (
-                  <p className="text-center">No blog posts available</p>
+                  <p className="text-center tw-text-slate-400">No blog posts available</p>
                 )}
               </div>
             </div>

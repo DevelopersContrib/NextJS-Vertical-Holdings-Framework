@@ -1,11 +1,13 @@
 import CategorySection from "@/components/home/CategorySection";
 import DiscoverSection from "@/components/home/DiscoverSection";
+import HomeHero from "@/components/home/HomeHero";
+import LatestTasksSection from "@/components/home/LatestTasksSection";
 import PopularSection from "@/components/home/PopularSection";
+import WhatWeDoSection from "@/components/home/WhatWeDoSection";
 import Footer from "@/components/includes/Footer";
 import HeaderWidget from "@/components/includes/HeaderWidget";
 import Learn from "@/components/includes/Learn";
 import Navigation from "@/components/includes/Navigation";
-import ScriptLoader from "@/components/includes/ScriptLoader";
 import Notification from "@/components/notification/Notification";
 //import BlogList from "@/modules/blog/BlogList";
 
@@ -67,114 +69,15 @@ export default async function Home() {
         domain={domain}
         logo={c.data.logo}
       />
-      <section className="tw-pt-24 tw-min-h-screen">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-7">
-              <Image
-                src="https://cdn.vnoc.com/icons/chat-vertical/bannerSec1.png"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="img-fluid tw-w-full"
-                alt=""
-              />
-            </div>
-            <div className="col-lg-5">
-              <h1 className="tw-text-2xl tw-leading-6 sm:tw-text-[40px] sm:tw-leading-[54px] tw-font-bold mb-4">
-                Join a vibrant community of developers, influencers, and entrepreneurs on {domain},
-                all using the versatile CONTRIB token to power their token economies!.
-              </h1>
-              <a
-                href=""
-                className="btn btn-primary tw-p-[20px!important] tw-min-w-[180px]"
-              >
-                Discover
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeHero domain={domain} />
       <PopularSection popular_domains={popular_domains} />
       <DiscoverSection top_seller={top_seller} />
 
-      <section className="tw-py-12">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <h2 className="tw-font-bold tw-text-3xl mb-3">Latest Tasks</h2>
-              <ScriptLoader html={html} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <LatestTasksSection scriptHtml={html} />
 
       <CategorySection categories={categories} />
       {/* <BlogList /> */}
-      <section className="tw-py-12">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <h2 className="tw-font-bold tw-text-3xl mb-4">What We Do</h2>
-            </div>
-            <div className="col-xl-12">
-              <div className="row">
-                <div className="col-xl-4">
-                  <div className="tw-flex tw-items-center tw-full mb-4">
-                    <div className="tw-mr-4">
-                      <Image
-                        src="https://cdn.vnoc.com/icons/vertical-holdings-framework/mobile-cogs.png"
-                        width={50}
-                        height={50}
-                        alt=""
-                      />
-                    </div>
-                    <div className="tw-font-medium tw-text-lg">We Build Brands</div>
-                  </div>
-                  <p className="tw-text-gray-400 tw-text-sm">
-                    We have the best technology contributors and inhouse staff that builds great
-                    brands.
-                  </p>
-                </div>
-                <div className="col-xl-4">
-                  <div className="tw-flex tw-items-center tw-full mb-4">
-                    <div className="tw-mr-4">
-                      <Image
-                        src="https://cdn.vnoc.com/icons/vertical-holdings-framework/mobile-money.png"
-                        width={50}
-                        height={50}
-                        alt=""
-                      />
-                    </div>
-                    <div className="tw-font-medium tw-text-lg">We Build Products</div>
-                  </div>
-                  <p className="tw-text-gray-400 tw-text-sm">
-                    Using our Contrib/VNOC model we are able to build web products vertically but
-                    still we need your help.
-                  </p>
-                </div>
-                <div className="col-xl-4">
-                  <div className="tw-flex tw-items-center tw-full mb-4">
-                    <div className="tw-mr-4">
-                      <Image
-                        src="https://cdn.vnoc.com/icons/vertical-holdings-framework/mobile-notification.png"
-                        width={50}
-                        height={50}
-                        alt=""
-                      />
-                    </div>
-                    <div className="tw-font-medium tw-text-lg">We Build Verticals</div>
-                  </div>
-                  <p className="tw-text-gray-400 tw-text-sm">
-                    Using our massive Globalventures portfolio, we build products around our
-                    verticals and create synergy within and outside our portfolio.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhatWeDoSection />
       <Learn domain={domain} />
       <Notification />
       <Footer
