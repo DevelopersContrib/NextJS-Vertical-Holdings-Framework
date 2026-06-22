@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
-import { getData } from '@/lib/data'
-export const dynamic = 'force-dynamic'
+import { getData, getDomain } from '@/lib/data';
+import Script from 'next/script';
+export const dynamic = 'force-dynamic';
 import nextDynamic from 'next/dynamic';
 
 const First100FoundersModalWrapper = nextDynamic(
@@ -52,12 +53,20 @@ export async function generateMetadata() {
 
 
 export default function RootLayout({ children }) {
+  const domain = getDomain();
+
   return (
     <html lang="en" className="dark" data-bs-theme="dark">
       <body>
+        <Script
+          src="https://analytics.vnoc.com/tracker.js"
+          data-endpoint="https://analytics.vnoc.com/"
+          data-domain={domain}
+          strategy="afterInteractive"
+        />
         <First100FoundersModalWrapper />
         {children}
       </body>
     </html>
-  )
+  );
 }
